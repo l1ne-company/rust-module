@@ -1,7 +1,7 @@
 {
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    rust-module.url = "path:../rust-module";
+    rust-module.url = "github:l1ne-company/rust-module";
   };
 
   outputs = { self, nixpkgs, rust-module, ... }:
