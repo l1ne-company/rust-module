@@ -8,6 +8,35 @@
 
   outputs = { self, crane }:
     {
+      templates = {
+        default = {
+          path = ./template;
+          description = "A Rust project template using rust-module for builds and deployment";
+          welcomeText = ''
+            # Rust Module Template
+
+            A Nix flake template for Rust projects with built-in CI, dev shell, and optional systemd deployment.
+
+            ## Quick Start
+
+            1. Update the constants in flake.nix:
+               - PNAME: your package name
+               - PORT: your service port (if applicable)
+
+            2. Build your project:
+               nix build
+
+            3. Enter development shell:
+               nix develop
+
+            4. Run CI checks:
+               nix flake check
+
+            See README.md for more details.
+          '';
+        };
+      };
+
       lib = {
         # Main function to create Rust project outputs
         # Usage: rust-module.lib.mkRustProject { pkgs, src, PNAME, ... }

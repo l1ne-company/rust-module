@@ -6,39 +6,27 @@ Provides reusable crane-based infrastructure with standard CI checks (clippy, fm
 
 ## Quick Start
 
-<<<<<<< HEAD
-[Service]
-Type=simple
-ExecStart=/nix/store/...-start-rust-server/bin/start-rust-server
-Restart=on-failure
-RestartSec=5s
-User=rust-module
-PrivateTmp=true
-ProtectSystem=strict
-Environment=PORT=6969
-
-[Install]
-WantedBy=multi-user.target
-```
-=======
-Copy the template and customize for your project:
+Initialize a new project with the template:
 
 ```bash
-cp -r template/ ../your-rust-project/
-cd ../your-rust-project/
-# Edit flake.nix: change PNAME, PORT, and rust-module.url
+nix flake init -t github:l1ne-company/rust-module
+```
+
+Or add to an existing flake:
+
+```nix
+inputs.rust-module.url = "github:l1ne-company/rust-module";
 ```
 
 See [template/README.md](template/README.md) for details.
->>>>>>> c7ea015 ([global] make generic)
 
 ## Features
 
-- ✅ **Standard CI:** clippy, fmt, doc checks built-in
-- ✅ **Extensible:** Add custom checks, build inputs, dev packages
-- ✅ **Dev shell:** Pre-configured development environment
-- ✅ **SystemD service:** Optional deployment helper
-- ✅ **Pure library:** No assumptions about your project structure
+- **Standard CI:** clippy, fmt, doc checks built-in
+- **Extensible:** Add custom checks, build inputs, dev packages
+- **Dev shell:** Pre-configured development environment
+- **SystemD service:** Optional deployment helper
+- **Pure library:** No assumptions about your project structure
 
 ## Usage Patterns
 
