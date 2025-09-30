@@ -19,9 +19,9 @@ User=rust-module
 PrivateTmp=true
 ProtectSystem=strict
 Environment=PORT=6969
-```
 
 [Install]
 WantedBy=multi-user.target
+```
 
 [Special systemd units](https://www.freedesktop.org/software/systemd/man/latest/systemd.special.html)
